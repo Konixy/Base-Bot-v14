@@ -5,7 +5,6 @@ import { Config, ClientType } from "../Types";
 export default {
     name: "interactionCreate",
     async execute(client: Client, Client: ClientType, interaction: Interaction) {
-        console.log(interaction)
         if (!interaction.guild) return;
 
         if (interaction.type == InteractionType.ApplicationCommand) {

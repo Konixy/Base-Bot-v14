@@ -1,17 +1,17 @@
 // ce fichier n'a pas besoin d'être convertis en TypeScript
-const { Routes } = require('discord.js');
-const { REST } = require('@discordjs/rest');
-const fs = require('fs');
+import { Routes } from 'discord.js';
+import { REST } from '@discordjs/rest';
+import fs from 'fs';
 
-const shadow = require("./shadow.json");
+import shadow from "./shadow.js";
 const guildId = "id de serveur pour les commandes de serveur";
 const clientId = "id du bot";
 
 const commands = [];
-
-const commandFiles = fs.readdirSync(`${__dirname}/commands`).filter(file => file.endsWith(".js") || file.endsWith('.ts'));
-commandFiles.forEach(commandFile => {
-    const command = require(`${__dirname}/commands/${commandFile}`);
+const commandFiles = fs.readdirSync(`${process.cwd()}/commands`).filter(file => file.endsWith(".js") || file.endsWith('.ts'));
+commandFiles.forEach(async commandFile => {
+    const command = require(`${process.cwd()}/commands`);
+    console.log(command)
     if (command.data && !command.botOwnerOnly) commands.push(command.data.toJSON());
 });
 

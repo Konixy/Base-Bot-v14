@@ -6,7 +6,7 @@ import {
 import fs from "fs";
 import {colors} from "colors.ts";
 import config from "./config.js";
-import shadow from "./shadow.json";
+import shadow from "./shadow";
 import CreateClient from "./Client";
 import { Command } from "./Types.js";
 
