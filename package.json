@@ -7,7 +7,8 @@
   "scripts": {
     "start": "echo \"Make sure to run: npm i, to install all dependencies\" && ts-node index.ts",
     "dev": "echo \"Make sure to install nodemon with: npm i -g nodemon\" && nodemon index.ts",
-    "deploy": "ts-node deploy-commands.ts"
+    "deploy": "echo \"This command will deploy all the commands discord gateway\" && ts-node deploy-commands.ts",
+    "build": "npx tsc && ts-node deploy-commands.ts && ts-node index.ts"
   },
   "author": "Niridya#0001",
   "license": "ISC",
