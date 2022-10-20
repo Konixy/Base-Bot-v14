@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Base discord.js for making Discord Bots.",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "echo \"Make sure to run: npm i, to install all dependencies\" && ts-node index.ts",
-    "dev": "echo \"Make sure to install nodemon with: npm i -g nodemon\" && nodemon index.ts"
+    "dev": "echo \"Make sure to install nodemon with: npm i -g nodemon\" && nodemon index.ts",
+    "deploy": "ts-node deploy-commands.ts"
   },
   "author": "Niridya#0001",
   "license": "ISC",

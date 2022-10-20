@@ -4,7 +4,7 @@ import {
   ActivityType,
 } from "discord.js";
 import fs from "fs";
-import {colors} from "colors.ts";
+import colors from "colors";
 import config from "./config.js";
 import shadow from "./shadow";
 import CreateClient from "./Client";
@@ -50,5 +50,5 @@ for (const file of commandFiles) {
 // gestion des erreurs
 process.on("unhandledRejection", (error: NodeJS.ErrnoException) => {
   if (Number(error.code) == 10062) return; // Unknown interaction
-  console.log(colors('red', `[ERROR] ${error}`));
+  console.log(colors.red(`[ERROR] ${error}`));
 });

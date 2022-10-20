@@ -10,7 +10,7 @@ const clientId = "id du bot";
 const commands = [];
 const commandFiles = fs.readdirSync(`${process.cwd()}/commands`).filter(file => file.endsWith(".js") || file.endsWith('.ts'));
 commandFiles.forEach(async commandFile => {
-    const command = require(`${process.cwd()}/commands`);
+    const command = require(`${process.cwd()}/commands/${commandFile}`);
     console.log(command)
     if (command.data && !command.botOwnerOnly) commands.push(command.data.toJSON());
 });
@@ -21,5 +21,6 @@ rest.put(
     // Routes.applicationGuildCommands(clientId, guildId), { body: commands } // Guild commands
     Routes.applicationCommands(clientId), { body: commands } // Global commands
     )
-	.then((data) => console.log(`Successfully registered ${data.length} application commands.`))
+	.then((data: []) => console.log(`Successfully registered ${data.length} application commands.`))
 	.catch(console.error);
+    

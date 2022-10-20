@@ -1,4 +1,4 @@
-import { colors } from "colors.ts";
+import colors from "colors";
 import { InteractionType, Client, Interaction } from "discord.js";
 import { Config, ClientType } from "../Types";
 
@@ -26,7 +26,7 @@ export default {
             }
 
             command.executeSlash(client, Client, interaction);
-            console.log(colors("brightBlue", `[CMD-S]`) + ` ${interaction.guild.name} | ${interaction.channel.name} | ${interaction.user.tag} | ${command.name}`);
+            console.log(colors.blue(`[CMD-S]`) + ` ${interaction.guild.name} | ${interaction.channel.name} | ${interaction.user.tag} | ${command.name}`);
         }
     }
 }

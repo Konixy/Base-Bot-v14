@@ -1,13 +1,12 @@
 import { Client } from "discord.js";
-import { colors } from "colors.ts";
+import colors from "colors";
 
 export default {
   name: "ready",
   once: true,
   async execute(client: Client) {
     console.log(
-      colors(
-        "green",
+      colors.blue(
         `[READY] ${client.user.tag} (${
           client.user.id
         }) est prêt | ${client.guilds.cache.size.toLocaleString(

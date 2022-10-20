@@ -1,6 +1,6 @@
 import { Client, Message } from "discord.js";
 import { ClientType } from "../Types";
-import {colors} from "colors.ts";
+import colors from "colors";
 
 export default {
     name: "messageCreate",
@@ -31,6 +31,6 @@ export default {
         }
 
         command.execute(client, Client, message, args);
-        console.log(colors("brightBlue", `[CMD]`) + ` ${message.guild.name} | ${message.channel.name} | ${message.author.tag} | ${command.name}`);
+        console.log(colors.blue(`[CMD]`) + ` ${message.guild.name} | ${message.channel.name} | ${message.author.tag} | ${command.name}`);
     }
 }
